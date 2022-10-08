@@ -12,10 +12,10 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/setup-node@v3
-          with:
-            node-version: 16
-        - run: npm i && npm run build
-        - run: npx cap copy ios
+        with:
+          node-version: 16
+      - run: npm i && npm run build
+      - run: npx cap copy ios
       - uses: yukiarrr/ios-build-action@v1.5.0
         with:
           project-path: "ios/App/App.xcodeproj"
