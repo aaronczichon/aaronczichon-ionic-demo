@@ -15,8 +15,9 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: npm i && npm run build
-      - run: npx trapeze run config.yaml --ios-project ios/App
+      - run: npm i
+      - run: npx trapeze run config.yaml -y --ios-project ios/App
+      - run: npm run build
       - run: npx cap copy ios
       - uses: yukiarrr/ios-build-action@v1.5.0
         with:
