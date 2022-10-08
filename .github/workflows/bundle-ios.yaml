@@ -13,14 +13,14 @@ jobs:
     steps:
       - uses: yukiarrr/ios-build-action@v1.5.0
         with:
-          project-path: /ios/App/App.xcodeproj
+          project-path: ./ios/App/App.xcodeproj
           p12-base64: ${{ secrets.P12_BASE64 }}
           certificate-password: ${{ secrets.P12_CER_PASSWORD }}
           build-sdk: 15.0
           mobileprovision-base64: ${{ secrets.PROVISIONING_PROFILE }}
           code-signing-identity: ${{ secrets.CODE_SIGNING_IDENTITY }}
           team-id: ${{ secrets.TEAM_ID }}
-          workspace-path: /ios/App/App.xcworkspace
+          workspace-path: ./ios/App/App.xcworkspace
           export-method: app-store
           configuration: Release
           output-path: App.ipa
