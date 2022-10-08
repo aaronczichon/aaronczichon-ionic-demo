@@ -11,7 +11,7 @@ jobs:
     name: Build & Bundle App
     runs-on: macos-latest
     steps:
-      - uses: yukiarrr/ios-build-action@latest
+      - uses: yukiarrr/ios-build-action@v1.5.0
         with:
           project-path: ios/App/App.xcodeproj
           p12-base64: ${{ secrets.P12_BASE64 }}
