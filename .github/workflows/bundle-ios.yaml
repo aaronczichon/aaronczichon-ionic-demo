@@ -22,7 +22,7 @@ jobs:
           project-path: "ios/App/App.xcodeproj"
           p12-base64: ${{ secrets.P12_BASE64 }}
           certificate-password: ${{ secrets.P12_CER_PASSWORD }}
-          build-sdk: 15.0
+          build-sdk: "15.0"
           mobileprovision-base64: ${{ secrets.PROVISIONING_PROFILE }}
           code-signing-identity: ${{ secrets.CODE_SIGNING_IDENTITY }}
           team-id: ${{ secrets.TEAM_ID }}
