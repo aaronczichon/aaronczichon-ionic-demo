@@ -1,7 +1,9 @@
 name: Bundle iOS App
 
 on:
-  branch: main
+  push:
+    branches:
+      - "main"
 
 jobs:
   bundle-app:
