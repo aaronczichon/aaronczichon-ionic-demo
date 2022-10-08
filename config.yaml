@@ -3,3 +3,6 @@ platforms:
     versionName: 1.0.0
   ios:
     version: 1.0.0
+    targets:
+      App:
+        bundleId: com.aaronczichon.mobile
