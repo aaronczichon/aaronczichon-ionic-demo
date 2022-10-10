@@ -32,3 +32,7 @@ jobs:
           export-method: app-store
           configuration: Release
           output-path: App.ipa
+      - uses: actions/upload-artifact@v3
+        with:
+          name: iOS.ipa
+          path: App.ipa
