@@ -1,8 +1,17 @@
+vars:
+  GITHUB_RUN_NUMBER:
+    default: 1
+  PACKAGE_NAME:
+    default: com.aaronczichon.mobile
+
 platforms:
   android:
+    packageName: $PACKAGE_NAME
     versionName: 1.0.0
+    versionCode: $GITHUB_RUN_NUMBER
   ios:
     version: 1.0.0
     targets:
       App:
-        bundleId: com.aaronczichon.mobile
+        buildNumber: $GITHUB_RUN_NUMBER
+        bundleId: $PACKAGE_NAME
