@@ -1,4 +1,4 @@
-name: Bundle iOS App
+name: Bundle Apps
 
 on:
   push:
@@ -7,8 +7,8 @@ on:
       - "ci/add-github-workflow"
 
 jobs:
-  bundle-app:
-    name: Build & Bundle App
+  bundle-ios-app:
+    name: Build & Bundle iOS App
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
@@ -36,3 +36,23 @@ jobs:
         with:
           name: iOS.ipa
           path: App.ipa
+  bundle-android-app:
+    name: Build & Bundle Android App
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: npm i
+      - run: npm run build
+      - run: npx cap sync android
+      - uses: sparkfabrik/android-build-action@v1.2.0
+        with:
+          project-path: android
+          build-type: bundle
+          output-path: App.abb
+      - uses: actions/upload-artifact@v3
+        with:
+          name: App.abb
+          path: App.abb
