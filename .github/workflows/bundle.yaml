@@ -50,9 +50,9 @@ jobs:
       - uses: sparkfabrik/android-build-action@v1.2.0
         with:
           project-path: android
-          build-type: bundle
-          output-path: App.abb
+          build-type: assemble
+          output-path: App.apk
       - uses: actions/upload-artifact@v3
         with:
-          name: App.abb
-          path: App.abb
+          name: App.apk
+          path: App.apk
